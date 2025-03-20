@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Portfolio</title>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="style2.css" />
+		<!-- <link rel="stylesheet" href="mediaqueries.css"/> -->
+	</head>
+	<body>
+		<nav id="desktop-nav">
+			<div class="logo">
+				<a href="index.html">OvaCheck</a>
+			</div>
+			<div class="nav-container">
+				<ul class="nav-link">
+					<li><a href="#about">About</li>
+					<li><a href="#explore">Explore</a></li>
+					<li><a href="#dashboard">Dashboard</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<li><button id="l-d" onclick="lighttodark()">Light</button></li>
+					<li><label class="switch"><input type="checkbox" id="themeSwitcher">
+						<span class="slider"></span>
+						</label>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<!-- New nav for small screen -->
+		<nav id="small-nav">
+			<div class="logo">
+				<a href="index.html">OvaCheck</a>
+			</div>
+			<div class="small-menu">
+				<div class="hamburger-icon" onclick="toggleMenu()">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<div class="menu-links">
+					<li><a href="#about" onclick="toggleMenu()">About</a></li>
+					<li><a href="#projects" onclick="toggleMenu()">Project</a></li>
+					<li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+					<li><button id="l-d-s" onclick="lighttodark()">Light</button></li>
+					<li><label class="switch"><input type="checkbox" id="sthemeSwitcher">
+						<span class="slider"></span>
+						</label>
+					</li>
+				</div>
+			</div>
+		</nav>
+
+		<script src="script.js"></script>
+		<!--PROFILE SECTION -->
+		<section id="profile">
+			<div class="section__text">
+				<p class="section__text__p1">OvaCheck is your personal guide to PCOS</p>
+				<h1 class="title">Welcome to OvaCheck.</h1>
+				<button	id="Button">
+				<span id="Button-span">Sign in/ Sign up</span>
+				</button>
+				<p></p>
+				<!-- <div id="socials-container">
+					<img
+						src="./Resource/linkedin.png"
+						alt="My LinkedIn profile"
+						class="icon"
+						onclick="location.href='https://www.linkedin.com/in/ajay00sharma'"
+					/>
+					<img
+						src="./Resource/github.png"
+						alt="My Github profile"
+						class="icon"
+						onclick="location.href='https://github.com/ajay00sharma'"
+					/>
+				</div> -->
+			</div>
+			<div class="section__pic-container">
+				<img src="./Resource/logo2bg.png" alt="Profile picture" />
+			</div>
+		</section>
+		<!-- About Section -->
+		<section id="about" class="about sec-pad">
+			<div class="main-container">
+				<h2 class="heading heading-sec heading-sec__mb-med">
+					<span class="heading-sec__main">ABOUT</span>
+					<!-- <span class="heading-sec__sub">
+					Here is some more information about me, what I do, and my current skills mostly in programming and technology.
+					</span> -->
+				</h2>
+				<div class="about__content">
+					<div class="about__content-main">
+						<!-- <h3 class="about__content-title">Get to know me!</h3> -->
+						<div class="about__content-details">
+							<p class="about__content-details-para">
+								<strong>Polycystic Ovary Syndrome (PCOS) </strong> is a common hormonal disorder among women.PCOS affects 1 in 10 women of reproductive age, yet over 50% of cases remain undiagnosed due to limited awareness and lack of accessible diagnostic tools.
+								It is characterized by irregular ovulation, ovarian cysts, and hormonal imbalances.
+								Once an individual is diagnosed with PCOS, managing it requires long-term lifestyle modification.
+							</p>
+							<p class="about__content-details-para">
+								We have developed this app to help women with polycystic ovary syndrome (PCOS) find information of the highest quality from leading experts in this field. It has been designed with women and for women with polycystic ovary syndrome.
+							</p>
+							<p class="about__content-details-para">
+								Having PCOS is a journey of learning about the condition, of understanding how it impacts your life and of what you can do to manage this. We are providing trustworthy information to learn about the condition and support you to find the healthiest possible lifestyle for you
+							</p>
+						</div>
+						<a href="#contact" class="btn btn--med btn--theme dynamicBgClr">Contact</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- PROJECTS -->
+
+		<section id="explore">
+			<p class="section__text__p1">Explore to learn more</p>
+			<h1 class="title">Projects</h1>
+			<div class="experience-details-container">
+				<div class="about-containers">
+					<!-- Visible card-->
+					<div class="card">
+						<img src="Resource/1card.jpg" alt="Project Image" class="card__image" loading="lazy"/>
+						<div class="card__content" style="background-image: url('Resource/1card.jpg'); background-size: cover;">
+							<p class="card__title">Chat Bot</p>
+							<p class="card__description">
+							</p>
+							<a class="card__button" href="https://github.com/ajay00sharma/Fitness-Tracking-App.git" target="_blank">Source Code</a>
+						</div>
+					</div>
+
+					<div class="card">
+						<img src="Resource/2card.jpg" alt="Project Image" class="card__image" loading="lazy"/>
+						<div class="card__content" style="background-image: url('Resource/2card.jpg'); background-size: cover;">
+							<p class="card__title">Fitness-Tracking-App</p>
+							<p class="card__description">
+							</p>
+							<a class="card__button" href="https://github.com/ajay00sharma/Fitness-Tracking-App.git" target="_blank">Source Code</a>
+						</div>
+					</div>
+
+					<div class="card">
+						<img src="Resource/3card.jpg" alt="Project Image" class="card__image" loading="lazy"/>
+						<div class="card__content" style="background-image: url('Resource/3card.jpg'); background-size: cover;">
+							<p class="card__title">Snake Game</p>
+							<p class="card__description">
+							</p>
+							<a class="card__button" href="https://github.com/ajay00sharma/Fitness-Tracking-App.git" target="_blank">Source Code</a>
+						</div>
+					</div>
+
+					<!-- Hoden cards add more hidden cards as needed -->
+
+					<div class="card hidden-card">
+						<img src="Resource/4card.jpg" alt="Project Image" class="card__image" loading="lazy"/>
+						<div class="card__content" style="background-image: url('Resource/4card.jpg'); background-size: cover;">
+							<p class="card__title">Calculater</p>
+							<p class="card__description">
+							</p>
+							<a class="card__button" href="https://github.com/ajay00sharma/Fitness-Tracking-App.git" target="_blank">Source Code</a>
+						</div>
+					</div>
+
+					<div class="card hidden-card">
+						<img src="Resource/5card.jpg" alt="Project Image" class="card__image" loading="lazy"/>
+						<div class="card__content" style="background-image: url('Resource/5card.jpg'); background-size: cover;">
+							<p class="card__title">To-Do-List</p>
+							<p class="card__description">
+							</p>
+							<a class="card__button" href="https://github.com/ajay00sharma/Fitness-Tracking-App.git" target="_blank">Source Code</a>
+					</div>
+				</div>
+				
+				</div>
+			</div>
+			<button class="btn btn-color-2 show-more-btn" onclick="showMoreProjects()">
+				Show More
+			</button>
+		</section>
+
+		<!-- Contcts -->
+
+		<section id="contact">
+			<p class="section__text__p1">Get in Touch</p>
+			<h1 class="title">Contact Me</h1>
+			<div class="contact-info-upper-container">
+				<div class="contact-info-container">
+					<img
+						src="./Resource/email.png"
+						alt="Email icon"
+						class="icon contact-icon email-icon"
+					/>
+					<p>
+						<a href="mailto:sharma.ajay.6004@gmail.com" target="_blank"
+							>sharma.ajay.6004@gmail.com</a
+						>
+					</p>
+				</div>
+				<div class="contact-info-container">
+					<img
+						src="./Resource/linkedin.png"
+						alt="LinkedIn icon"
+						class="icon contact-icon"
+					/>
+					<p>
+						<a href="https://www.linkedin.com/in/ajay00sharma/" target="_blank">LinkedIn</a>
+					</p>
+				</div>
+			</div>
+		</section>
+		<!-- Footer -->
+		<footer>
+			<nav>
+			  <div class="nav-links-container">
+				<ul class="nav-links">
+				  <li><a href="#about">About</a></li>
+				  <li><a href="#explore">Explore</a></li>
+				  <li><a href="#dashboard">Dashboard</a></li>
+				  <li><a href="#contact">Contact</a></li>
+				  <li><button id="l-d-footer" onclick="lighttodark()">Light</button></li>
+					<li><label class="switch"><input type="checkbox" id="themeSwitcher-footer">
+						<span class="slider"></span>
+						</label>
+					</li>
+				</ul>
+			  </div>
+			</nav>
+			<p>Copyright &#169; 2025 Ajay Sharma. All Rights Reserved.</p>
+		  </footer>
+		  <script defer src="script.js"></script>
+		</body>
+	  </html>
+	</body>
+</html>

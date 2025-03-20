@@ -1,0 +1,245 @@
+/* #Button */
+
+#Button {
+	position: relative;
+	height: 50px;
+	padding: 0px 20px;
+	border: 2px solid #000;
+	background: #e8e8e8;
+	user-select: none;
+	white-space: nowrap;
+	transition: all 0.05s linear;
+	font-family: inherit;
+	/* font-size: px; */
+	font-weight: 600;
+}
+
+#Button-span {
+	background-color: #e8e8e8;
+}
+#Button:before,
+#Button:after {
+	content: "";
+	position: absolute;
+	background: #e8e8e8;
+	transition: all 0.2s linear;
+}
+
+#Button:before {
+	width: calc(100% + 6px);
+	height: calc(100% - 16px);
+	top: 8px;
+	left: -3px;
+}
+
+#Button:after {
+	width: calc(100% - 16px);
+	height: calc(100% + 6px);
+	top: -3px;
+	left: 8px;
+}
+
+#Button:hover {
+	cursor: crosshair;
+}
+
+#Button:active {
+	transform: scale(0.95);
+}
+
+#Button:hover:before {
+	height: calc(100% - 32px);
+	top: 16px;
+}
+
+#Button:hover:after {
+	width: calc(100% - 32px);
+	left: 16px;
+}
+
+#Button span {
+	font-size: 20px;
+	z-index: 3;
+	position: relative;
+	font-weight: 600;
+}
+
+/* SLider for theam on the nav bar */
+
+/* The switch - the box around the slider */
+.switch {
+	display: none;
+	--width-of-switch: 4em;
+	--height-of-switch: 1.5em;
+	/* size of sliding icon -- sun and moon */
+	--size-of-icon: 1em;
+	/* it is like a inline-padding of switch */
+	--slider-offset: 0.3em;
+	position: relative;
+	margin-left: -18px;
+	@media screen and (max-width: 900px) {
+		margin-left: 4px;
+		--width-of-switch: 4.5em;
+		--size-of-icon: 1.2em;
+	}
+	width: var(--width-of-switch);
+	height: var(--height-of-switch);
+	transform: scale(0.8); /* Scale down the entire switch */
+	transform-origin: center;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+/* The slider */
+.slider {
+	position: absolute;
+	cursor: none;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #f4f4f5;
+	transition: 0.5s;
+	border-radius: 30px;
+	cursor: default;
+	
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: var(--size-of-icon, 1em);
+	width: var(--size-of-icon, 1em);
+	border-radius: 20px;
+	left: var(--slider-offset, 0.3em);
+	top: 50%;
+	transform: translateY(-50%);
+	background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
+	transition: 0.5s;
+}
+
+input:checked + .slider {
+	background-color: #303136;
+}
+
+input:checked + .slider:before {
+	left: calc(100% - (var(--size-of-icon, 1.4em) + var(--slider-offset, 0.3em)));
+	background: #303136;
+	/* change the value of second inset in box-shadow to change the angle and direction of the moon  */
+	box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+}
+
+/* CARDS STYLE */
+
+.about-containers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ensures 3 cards in a row */
+    position: relative;
+    gap: 30px;
+    margin-top: 50px;
+    margin-left: 55px;
+}
+
+.card {
+    position: relative;
+    width: 400px;
+    aspect-ratio: 16/9;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 6px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    perspective: 1000px;
+    box-shadow: 0 0 0 5px #ffffff80;
+	transition: transform 0.6s ease, box-shadow 0.6s ease;
+    will-change: transform, opacity;
+}
+
+/* Hidden Project section */
+.hidden-card {
+    display: none; /* Initially hidden completely */
+    opacity: 0;
+    transform: scaleY(0); /* Start at 0 scale */
+    max-height: 0;
+    overflow: hidden;
+}
+
+.show-card {
+    opacity: 1;
+    transform: scaleY(1); /* Expand to full size */
+    max-height: 420px;
+    overflow: hidden;
+}
+
+.card__image {
+    width: 100%;
+    height: 100%;
+	will-change: transform, opacity;
+}
+
+/* Card hover effect */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+/* Maintain the rotateX animation but optimize it */
+.card__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+
+    /* Optimized glassmorphism */
+    /* Slightly reduce the transparency */
+    backdrop-filter: blur(4px); /* Lowered blur */
+    -webkit-backdrop-filter: blur(4px); 
+    border: 1px solid rgba(242, 242, 242, 0.6);
+
+    /* Smooth 3D transition */
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+	transition: transform 0.6s ease, box-shadow 0.6s ease;
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+.card:hover .card__content {
+    transform: rotateX(0deg);
+    opacity: 1;
+}
+
+/* Title styling */
+.card__title {
+    font-size: 20px;
+    color: #1b1b1e;
+    font-weight: 700;
+	background: none;
+}
+
+/* Description styling */
+.card__description {
+	margin-top: 10px;
+    font-size: 12px;
+    color: #1b1b1e;
+    line-height: 1.4;
+	background: none;
+}
+
+/* Button styling */
+.card__button {
+    padding: 7px;
+    border-radius: 8px;
+    background: #4d4d4d;
+    border: none;
+    color: white;
+    text-decoration: none;
+}
